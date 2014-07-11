@@ -11,8 +11,8 @@ var jsonObj = {
 /*==== WINDOW ONLOAD =========================================================*/
 window.onload = function() {
     // DOM elements
-    var eDivMap = document.querySelector('#map-container');
-    var eDivAddress = document.querySelector('#address-container');
+    var eMapContainer = document.querySelector('#map-container');
+    var eAddressContainer = document.querySelector('#address-container');
     
     // Create new image element with json object data
     var eMapStatic = document.createElement('img');
@@ -23,19 +23,19 @@ window.onload = function() {
     url += '&markers=color:gray|';
     url += jsonObj.street_name + '+';
     url += jsonObj.street_number + ',';
-    url += jsonObj.postcode + '+';
+//    url += jsonObj.postcode + '+';
     url += jsonObj.city;
     
     // Set new element source
     eMapStatic.src = url;
     
     // Add map to DOM
-    eDivMap.appendChild(eMapStatic);
+    eMapContainer.appendChild(eMapStatic);
     
     // Add header to address container
-    var eHeaderAddress = document.createElement('h3');
-    eHeaderAddress.innerHTML = 'Adres';
-    eDivAddress.appendChild(eHeaderAddress);
+    var eAddressHeader = document.createElement('h3');
+    eAddressHeader.innerHTML = 'Adres';
+    eAddressContainer.appendChild(eAddressHeader);
     
     // Build address data
     var eAddress = document.createElement('p');
@@ -45,5 +45,5 @@ window.onload = function() {
     eAddress.innerHTML = address;
     
     // Add address text to DOM
-    eDivAddress.appendChild(eAddress);
+    eAddressContainer.appendChild(eAddress);
 }

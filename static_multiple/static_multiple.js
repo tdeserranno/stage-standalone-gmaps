@@ -37,7 +37,7 @@ function processAddress(element, index, array) {
     url += 'label:' + (index + 1) + '|';
     url += element.street_name + '+';
     url += element.street_number + ',';
-    url += element.postcode + '+';
+//    url += element.postcode + '+';
     url += element.city;
 
     // Create new DOM element and add to aAddress array
@@ -53,8 +53,8 @@ function processAddress(element, index, array) {
 //==== WINDOW ONLOAD ===========================================================
 window.onload = function() {
     // DOM elements
-    var eDivMap = document.querySelector('#map-container');
-    var eDivAddress = document.querySelector('#address-container');
+    var eMapContainer = document.querySelector('#map-container');
+    var eAddressContainer = document.querySelector('#address-container');
 
     // Create new image element with json object data
     var eMapStatic = document.createElement('img');
@@ -64,15 +64,15 @@ window.onload = function() {
 
     // Set new element source and add map to DOM
     eMapStatic.src = url;
-    eDivMap.appendChild(eMapStatic);
+    eMapContainer.appendChild(eMapStatic);
 
     // Add header to address container
-    var eHeaderAddress = document.createElement('h3');
-    eHeaderAddress.innerHTML = 'Adressen';
-    eDivAddress.appendChild(eHeaderAddress);
+    var eAddressHeader = document.createElement('h3');
+    eAddressHeader.innerHTML = 'Adressen';
+    eAddressContainer.appendChild(eAddressHeader);
 
     // Add each address to address container
     aAddress.forEach(function(element, index, array) {
-        eDivAddress.appendChild(element);
+        eAddressContainer.appendChild(element);
     });
 };
