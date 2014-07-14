@@ -1,3 +1,10 @@
+/*
+ * Dynamic Google Map with multiple markers.
+ *  
+ * Using existing coordinates, not geocoding on the fly due to problems with
+ * asynchronous geocoder requests.
+ */
+
 //==== GLOBAL VARS =============================================================
 var aJSON = [
     {

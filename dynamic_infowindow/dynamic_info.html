@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dynamic Map with 1 marker</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript"
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBv1xUaQivBONOhtV0qbJ_JRY74w691VRM">
+        </script>
+
+        <link rel="stylesheet" href="../map.css">
+    </head>
+    <body>
+        <div id="map-canvas">Map</div>
+        <a href="../index.html">Terug naar menu</a>
+        <p class="disclaimer">Disclaimer: Accuracy of the markers may vary.</p>
+        <!-- Moved to the bottom because I was getting errors
+                Uncaught TypeError: Cannot read property 'offsetWidth' of null 
+        
+                Happens because DOM element that the initialize function is using
+                hasn't been rendered yet.
+        
+                Which is strange since it seemed to be no problem for all previous
+                pages ...
+        -->
+        <script type="text/javascript"
+                src="dynamic_info.js">
+        </script>
+    </body>
+</html>
